@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfn5kmnmubtlx"]
+
+[ext_resource type="Script" uid="uid://dfknqwxne6yrc" path="res://scripts/ball.gd" id="1_cxlvu"]
+[ext_resource type="Texture2D" uid="uid://b2vc3wgdnnbsp" path="res://dot.png" id="2_f7cbr"]
+
+[node name="Ball" type="Node2D"]
+script = ExtResource("1_cxlvu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(8, 8)
+texture = ExtResource("2_f7cbr")
