@@ -1,13 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://j58uwaxvgyvs"]
+[gd_scene format=3 uid="uid://j58uwaxvgyvs"]
 
+[ext_resource type="Script" uid="uid://c2ycgknabiqij" path="res://scripts/game.gd" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://0j7fxho1yrho" path="res://scenes/score.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://bgene1ehm5djx" path="res://dotted_line.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://8mb1l7h3ohjj" path="res://scenes/paddle.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://dfn5kmnmubtlx" path="res://scenes/ball.tscn" id="4_lbhrr"]
 
-[node name="Game" type="Node"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbhrr"]
+size = Vector2(1920, 20)
 
-[node name="Control" type="Control" parent="."]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
+size = Vector2(20, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p57ef"]
+size = Vector2(20, 1080)
+
+[node name="Game" type="Node" unique_id=1060187036]
+script = ExtResource("1_iywne")
+
+[node name="Control" type="Control" parent="." unique_id=938839405]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,7 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=642313136]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -25,20 +36,21 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Stripes" type="TextureRect" parent="Control"]
+[node name="Stripes" type="TextureRect" parent="Control" unique_id=275930441]
 z_index = -1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
-offset_right = 1.0
+offset_left = -2.0
+offset_right = -1.0
 offset_bottom = 60.0
 grow_horizontal = 2
 scale = Vector2(5, 18)
 texture = ExtResource("2_yqjtg")
 stretch_mode = 1
 
-[node name="ScoreLabel1" parent="Control" instance=ExtResource("1_uwrxv")]
+[node name="ScoreLabel1" parent="Control" unique_id=1515392760 instance=ExtResource("1_uwrxv")]
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
@@ -54,7 +66,7 @@ theme_override_font_sizes/font_size = 128
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScoreLabel2" parent="Control" instance=ExtResource("1_uwrxv")]
+[node name="ScoreLabel2" parent="Control" unique_id=1314951923 instance=ExtResource("1_uwrxv")]
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
@@ -70,14 +82,39 @@ theme_override_font_sizes/font_size = 128
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Level" type="Node2D" parent="."]
+[node name="Level" type="Node2D" parent="." unique_id=2087848275]
 
-[node name="Paddle1" parent="Level" instance=ExtResource("3_lnu2h")]
+[node name="Paddle1" parent="Level" unique_id=1509080302 instance=ExtResource("3_lnu2h")]
 position = Vector2(108, 540)
 
-[node name="Paddle2" parent="Level" instance=ExtResource("3_lnu2h")]
+[node name="Paddle2" parent="Level" unique_id=1345158172 instance=ExtResource("3_lnu2h")]
 position = Vector2(1812, 540)
 player_no = 2
 
-[node name="Ball" parent="Level" instance=ExtResource("4_lbhrr")]
-position = Vector2(582, 506)
+[node name="Ball" parent="Level" unique_id=1596023464 groups=["ball"] instance=ExtResource("4_lbhrr")]
+position = Vector2(960, 540)
+speed = 1000.0
+
+[node name="UpperWall" type="StaticBody2D" parent="Level" unique_id=1241489281]
+position = Vector2(960, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/UpperWall" unique_id=1733006518]
+shape = SubResource("RectangleShape2D_lbhrr")
+
+[node name="LowerWall" type="StaticBody2D" parent="Level" unique_id=509543427]
+position = Vector2(960, 1090)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/LowerWall" unique_id=92497050]
+shape = SubResource("RectangleShape2D_lbhrr")
+
+[node name="Player1Goal" type="StaticBody2D" parent="Level" unique_id=1612806811]
+position = Vector2(-10, 540)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Player1Goal" unique_id=938797826]
+shape = SubResource("RectangleShape2D_iywne")
+
+[node name="Player2Goal" type="StaticBody2D" parent="Level" unique_id=1359761991]
+position = Vector2(1930, 540)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Player2Goal" unique_id=918564694]
+shape = SubResource("RectangleShape2D_p57ef")

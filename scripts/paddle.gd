@@ -1,4 +1,4 @@
-class_name Paddle extends AnimatableBody2D
+class_name Paddle extends CharacterBody2D
 
 signal ball_hit()
 
@@ -7,6 +7,7 @@ signal ball_hit()
 
 @onready var up_action: String = "player_" + str(player_no) + "_up"
 @onready var down_action: String = "player_" + str(player_no) + "_down"
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 var height: float
 
