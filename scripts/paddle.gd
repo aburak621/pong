@@ -4,16 +4,19 @@ signal ball_hit()
 
 @export var player_no: int = 1
 @export var speed: float = 1000
+@export var paddle_scale: int = 32
 
 @onready var up_action: String = "player_" + str(player_no) + "_up"
 @onready var down_action: String = "player_" + str(player_no) + "_down"
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
+@onready var sprite: Sprite2D = $Sprite2D
 
 var height: float
 
 
 func _ready() -> void:
 	height = $Sprite2D.scale.y * 2
+	sprite.scale.y = paddle_scale
 
 
 func _physics_process(delta: float) -> void:
