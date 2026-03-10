@@ -86,6 +86,7 @@ vertical_alignment = 1
 
 [node name="Paddle1" parent="Level" unique_id=1509080302 groups=["paddle"] instance=ExtResource("3_lnu2h")]
 position = Vector2(108, 540)
+paddle_scale = 64
 
 [node name="Paddle2" parent="Level" unique_id=1345158172 groups=["paddle"] instance=ExtResource("3_lnu2h")]
 position = Vector2(1812, 540)
