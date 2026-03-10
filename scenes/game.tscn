@@ -86,15 +86,14 @@ vertical_alignment = 1
 
 [node name="Paddle1" parent="Level" unique_id=1509080302 groups=["paddle"] instance=ExtResource("3_lnu2h")]
 position = Vector2(108, 540)
-paddle_scale = 64
 
 [node name="Paddle2" parent="Level" unique_id=1345158172 groups=["paddle"] instance=ExtResource("3_lnu2h")]
 position = Vector2(1812, 540)
 player_no = 2
 
 [node name="Ball" parent="Level" unique_id=1596023464 groups=["ball"] instance=ExtResource("4_lbhrr")]
-position = Vector2(960, 540)
-speed = 700.0
+position = Vector2(960, 542)
+speed = 600.0
 speed_per_bounce = 30.0
 
 [node name="UpperWall" type="StaticBody2D" parent="Level" unique_id=1241489281]
