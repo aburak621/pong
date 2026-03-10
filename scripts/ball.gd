@@ -16,11 +16,10 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	print(velo.length())
 	var motion := velo * delta
 	var collision := move_and_collide(motion)
 
-	while collision:
+	if collision:
 		if (collision.get_collider() as Node).name == "Player1Goal":
 			scored.emit(2)
 			return
@@ -28,14 +27,14 @@ func _physics_process(delta: float) -> void:
 			scored.emit(1)
 			return
 
-
 		collided.emit()
-		velo = velo.bounce(collision.get_normal())
-		if (collision.get_collider() as Node).is_in_group("paddle"):
-			velo = velo.normalized() * (velo.length() + speed_per_bounce)
 
-		motion = collision.get_remainder().bounce(collision.get_normal())
-		collision = move_and_collide(motion)
+		var object := (collision.get_collider() as Node2D)
+		if (collision.get_collider() as Node).is_in_group("paddle"):
+			var direction := Vector2(sign(velo.bounce(collision.get_normal()).x), 1)
+			velo = (Vector2.RIGHT * (velo.length() + speed_per_bounce)).rotated(remap(clampf((collision.get_position().y - object.position.y) / (object as Paddle).paddle_scale, -1, 1), -1, 1, deg_to_rad(-45), deg_to_rad(45))) * direction
+		else:
+			velo = velo.bounce(collision.get_normal())
 
 
 func reset() -> void:

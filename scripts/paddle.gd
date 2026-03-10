@@ -15,7 +15,8 @@ var height: float
 
 
 func _ready() -> void:
-	height = $Sprite2D.scale.y * 2
+	height = paddle_scale * 2
+	(collision_shape.shape as RectangleShape2D).size.y = height
 	sprite.scale.y = paddle_scale
 
 
@@ -26,4 +27,4 @@ func _physics_process(delta: float) -> void:
 	var input := Input.get_axis(up_action, down_action)
 
 	if input != 0:
-		global_position.y = clampf(global_position.y + input * speed * delta, height / 2, 1080 - height / 2)
+		position.y = clampf(global_position.y + input * speed * delta, height / 2, 1080 - height / 2)
