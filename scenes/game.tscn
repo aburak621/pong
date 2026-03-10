@@ -93,7 +93,8 @@ player_no = 2
 
 [node name="Ball" parent="Level" unique_id=1596023464 groups=["ball"] instance=ExtResource("4_lbhrr")]
 position = Vector2(960, 540)
-speed = 1000.0
+speed = 700.0
+speed_per_bounce = 30.0
 
 [node name="UpperWall" type="StaticBody2D" parent="Level" unique_id=1241489281]
 position = Vector2(960, -10)

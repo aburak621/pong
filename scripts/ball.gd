@@ -4,6 +4,7 @@ signal collided()
 signal scored(scored_player: int)
 
 @export var speed: float = 200
+@export var speed_per_bounce: float = 25
 
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
@@ -28,7 +29,7 @@ func _physics_process(delta: float) -> void:
 
 
 		collided.emit()
-		velo = velo.bounce(collision.get_normal())
+		velo = velo.bounce(collision.get_normal()).normalized() * (velo.length() + speed_per_bounce)
 
 		motion = collision.get_remainder().bounce(collision.get_normal())
 		collision = move_and_collide(motion)
