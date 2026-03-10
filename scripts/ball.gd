@@ -16,6 +16,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	print(velo.length())
 	var motion := velo * delta
 	var collision := move_and_collide(motion)
 
@@ -29,7 +30,9 @@ func _physics_process(delta: float) -> void:
 
 
 		collided.emit()
-		velo = velo.bounce(collision.get_normal()).normalized() * (velo.length() + speed_per_bounce)
+		velo = velo.bounce(collision.get_normal())
+		if (collision.get_collider() as Node).is_in_group("paddle"):
+			velo = velo.normalized() * (velo.length() + speed_per_bounce)
 
 		motion = collision.get_remainder().bounce(collision.get_normal())
 		collision = move_and_collide(motion)

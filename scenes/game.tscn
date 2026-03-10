@@ -84,10 +84,10 @@ vertical_alignment = 1
 
 [node name="Level" type="Node2D" parent="." unique_id=2087848275]
 
-[node name="Paddle1" parent="Level" unique_id=1509080302 instance=ExtResource("3_lnu2h")]
+[node name="Paddle1" parent="Level" unique_id=1509080302 groups=["paddle"] instance=ExtResource("3_lnu2h")]
 position = Vector2(108, 540)
 
-[node name="Paddle2" parent="Level" unique_id=1345158172 instance=ExtResource("3_lnu2h")]
+[node name="Paddle2" parent="Level" unique_id=1345158172 groups=["paddle"] instance=ExtResource("3_lnu2h")]
 position = Vector2(1812, 540)
 player_no = 2
 
