@@ -1,0 +1,23 @@
+[gd_resource type="Theme" format=3 uid="uid://cit1d7tabj67q"]
+
+[ext_resource type="FontFile" uid="uid://xved4sydjq4r" path="res://fonts/Pong/pong.otf" id="1_u7j1g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u7j1g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gwd0w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gq8b7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5f4su"]
+
+[resource]
+Button/colors/font_color = Color(0.7, 0.7, 0.7, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/fonts/font = ExtResource("1_u7j1g")
+Button/styles/focus = SubResource("StyleBoxEmpty_u7j1g")
+Button/styles/hover = SubResource("StyleBoxEmpty_gwd0w")
+Button/styles/normal = SubResource("StyleBoxEmpty_gq8b7")
+Button/styles/pressed = SubResource("StyleBoxEmpty_5f4su")
+Label/fonts/font = ExtResource("1_u7j1g")
+VBoxContainer/constants/separation = 8

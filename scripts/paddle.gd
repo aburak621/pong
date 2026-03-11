@@ -21,9 +21,6 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("quit"):
-		get_tree().quit()
-
 	var input := Input.get_axis(up_action, down_action)
 
 	if input != 0:

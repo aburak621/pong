@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://0j7fxho1yrho"]
+[gd_scene format=3 uid="uid://0j7fxho1yrho"]
 
-[ext_resource type="FontFile" uid="uid://ti2lbiucjpxc" path="res://pong-score.otf" id="1_8juob"]
+[ext_resource type="FontFile" uid="uid://ti2lbiucjpxc" path="res://fonts/pong-score.otf" id="1_8juob"]
 [ext_resource type="Script" uid="uid://jsq5vrsgobk" path="res://scripts/score_label.gd" id="2_bak1h"]
 
-[node name="ScoreLabel" type="Label"]
+[node name="ScoreLabel" type="Label" unique_id=1058555983]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

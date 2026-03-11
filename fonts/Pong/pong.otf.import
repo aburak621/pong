@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://ti2lbiucjpxc"
-path="res://.godot/imported/pong-score.otf-b52587fe96213b71d467d8b3206bf474.fontdata"
+uid="uid://xved4sydjq4r"
+path="res://.godot/imported/pong.otf-927e0268ff85cd1648f015535da78268.fontdata"
 
 [deps]
 
-source_file="res://pong-score.otf"
-dest_files=["res://.godot/imported/pong-score.otf-b52587fe96213b71d467d8b3206bf474.fontdata"]
+source_file="res://fonts/Pong/pong.otf"
+dest_files=["res://.godot/imported/pong.otf-927e0268ff85cd1648f015535da78268.fontdata"]
 
 [params]
 
@@ -21,6 +21,7 @@ msdf_pixel_range=8
 msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
+modulate_color_glyphs=false
 hinting=1
 subpixel_positioning=4
 keep_rounding_remainders=true

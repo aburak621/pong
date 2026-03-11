@@ -20,6 +20,11 @@ run/main_scene="uid://j58uwaxvgyvs"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SaverLoader="*uid://bdy246hm55ybx"
+SceneTransition="*uid://h1qyfklp4t0y"
+
 [debug]
 
 gdscript/warnings/untyped_declaration=2
@@ -28,6 +33,10 @@ gdscript/warnings/untyped_declaration=2
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/kakule_utils/plugin.cfg")
 
 [gui]
 

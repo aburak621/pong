@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://bi08mwvmdg0ff"]
+
+[ext_resource type="Script" uid="uid://boh04jopq1q4d" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Theme" uid="uid://cit1d7tabj67q" path="res://pong_theme.tres" id="1_l6cm7"]
+
+[node name="MainMenu" type="Control" unique_id=1956709996]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+metadata/_edit_vertical_guides_ = [960.0]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2124809040]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="." unique_id=1547584760]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.1
+offset_left = -284.5
+offset_right = 284.5
+offset_bottom = 342.0
+grow_horizontal = 2
+theme = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 256
+text = " PONG"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=767527449]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+theme = ExtResource("1_l6cm7")
+
+[node name="OnePlayer" type="Button" parent="VBoxContainer" unique_id=266841594]
+layout_mode = 2
+theme = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 48
+text = "1 PLAYER "
+
+[node name="TwoPlayer" type="Button" parent="VBoxContainer" unique_id=677732969]
+layout_mode = 2
+theme = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 48
+text = "  2 PLAYERS"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1717783324]
+layout_mode = 2
+theme = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 48
+text = "QUIT"
+
+[node name="Credit" type="Label" parent="." unique_id=1938176274]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("1_l6cm7")
+theme_override_font_sizes/font_size = 20
+text = "“PONG” by “alejandrotapia2341” from fontstruct.com"

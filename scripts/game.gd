@@ -5,12 +5,16 @@ class_name Game extends Node
 @export var score_sound: AudioStream
 
 @onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var level: Node2D = $Level
+@onready var main_menu: Control = $MainMenu
 
 var audio_playback: AudioStreamPlaybackPolyphonic
 var ball: Ball
 
 
 func _ready() -> void:
+	stop_game()
+
 	audio_player.play()
 	audio_playback = audio_player.get_stream_playback()
 
@@ -22,9 +26,9 @@ func _ready() -> void:
 func player_scored(player: int) -> void:
 	match player:
 		1:
-			$Control/ScoreLabel1.update_score()
+			%ScoreLabel1.update_score()
 		2:
-			$Control/ScoreLabel2.update_score()
+			%ScoreLabel2.update_score()
 	audio_playback.play_stream(score_sound)
 	reset_game()
 
@@ -40,3 +44,28 @@ func play_sound(paddle_hit: bool) -> void:
 		audio_playback.play_stream(paddle_hit_sound)
 	else:
 		audio_playback.play_stream(wall_hit_sound)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("quit"):
+		if main_menu.visible:
+			get_tree().quit()
+		else:
+			stop_game()
+
+
+func start_game(two_player: bool = false) -> void:
+	main_menu.hide_menu()
+	level.visible = true
+	level.process_mode = Node.PROCESS_MODE_INHERIT
+
+	if not two_player:
+		reset_game()
+	else:
+		reset_game()
+
+
+func stop_game() -> void:
+	main_menu.show_menu()
+	level.visible = false
+	level.process_mode = Node.PROCESS_MODE_DISABLED
