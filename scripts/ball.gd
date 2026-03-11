@@ -1,6 +1,6 @@
 class_name Ball extends CharacterBody2D
 
-signal collided()
+signal collided(paddle_hit: bool)
 signal scored(scored_player: int)
 
 @export var speed: float = 200
@@ -28,14 +28,14 @@ func _physics_process(delta: float) -> void:
 			scored.emit(1)
 			return
 
-		collided.emit()
-
 		var object := (collision.get_collider() as Node2D)
 		if (collision.get_collider() as Node).is_in_group("paddle"):
 			var direction := Vector2(sign(velo.bounce(collision.get_normal()).x), 1)
 			velo = (Vector2.RIGHT * (velo.length() + speed_per_bounce)).rotated(remap(clampf((collision.get_position().y - object.position.y) / (object as Paddle).paddle_scale, -1, 1), -1, 1, deg_to_rad(-max_angle), deg_to_rad(max_angle))) * direction
+			collided.emit(true)
 		else:
 			velo = velo.bounce(collision.get_normal())
+			collided.emit(false)
 
 
 func reset() -> void:
