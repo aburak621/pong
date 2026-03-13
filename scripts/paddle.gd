@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 				cpu_cooldown += randf_range(0.4, 0.8)
 				cpu_target_y = randf_range(540 - random_rest_range, 540 + random_rest_range)
 		else:
-			var time_until_hit := (1820 - ball.position.x) / ball.velo.x
+			var time_until_hit := (1816 - ball.position.x) / ball.velo.x
 
 			if time_until_hit < 0:
 				cpu_target_y = position.y

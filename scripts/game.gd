@@ -13,6 +13,7 @@ var ball: Ball
 
 
 func _ready() -> void:
+	Engine.max_fps = DisplayServer.screen_get_refresh_rate() as int
 	stop_game()
 
 	audio_player.play()
