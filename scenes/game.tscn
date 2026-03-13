@@ -30,6 +30,7 @@ score_sound = ExtResource("4_vtaks")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=345406209]
 stream = SubResource("AudioStreamPolyphonic_iywne")
+volume_db = -6.0
 
 [node name="MainMenu" parent="." unique_id=1956709996 instance=ExtResource("5_0tnpc")]
 
@@ -106,36 +107,45 @@ vertical_alignment = 1
 
 [node name="Paddle1" parent="Level" unique_id=1509080302 groups=["paddle"] instance=ExtResource("3_lnu2h")]
 position = Vector2(108, 540)
+collision_layer = 2
+paddle_scale = 48
 
 [node name="Paddle2" parent="Level" unique_id=1345158172 groups=["paddle"] instance=ExtResource("3_lnu2h")]
 position = Vector2(1812, 540)
+collision_layer = 2
 player_no = 2
+paddle_scale = 48
 
 [node name="Ball" parent="Level" unique_id=1596023464 groups=["ball"] instance=ExtResource("4_lbhrr")]
 position = Vector2(960, 542)
-speed = 600.0
-speed_per_bounce = 30.0
+collision_mask = 6
+speed = 800.0
+speed_per_bounce = 40.0
 
 [node name="UpperWall" type="StaticBody2D" parent="Level" unique_id=1241489281]
 position = Vector2(960, -10)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/UpperWall" unique_id=1733006518]
 shape = SubResource("RectangleShape2D_lbhrr")
 
 [node name="LowerWall" type="StaticBody2D" parent="Level" unique_id=509543427]
 position = Vector2(960, 1090)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/LowerWall" unique_id=92497050]
 shape = SubResource("RectangleShape2D_lbhrr")
 
 [node name="Player1Goal" type="StaticBody2D" parent="Level" unique_id=1612806811]
 position = Vector2(-10, 540)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Player1Goal" unique_id=938797826]
 shape = SubResource("RectangleShape2D_iywne")
 
 [node name="Player2Goal" type="StaticBody2D" parent="Level" unique_id=1359761991]
 position = Vector2(1930, 540)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Player2Goal" unique_id=918564694]
 shape = SubResource("RectangleShape2D_p57ef")

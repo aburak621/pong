@@ -7,8 +7,8 @@ class_name MainMenu extends Control
 
 
 func _ready() -> void:
-	one_player_button.pressed.connect(game.start_game)
-	two_player_button.pressed.connect(game.start_game)
+	one_player_button.pressed.connect(game.start_game.bind(true))
+	two_player_button.pressed.connect(game.start_game.bind(false))
 	quit_button.pressed.connect(func() -> void: get_tree().quit())
 
 

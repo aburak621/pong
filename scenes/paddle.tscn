@@ -5,7 +5,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y7wee"]
 resource_local_to_scene = true
-size = Vector2(10, 64)
+size = Vector2(5, 64)
 
 [node name="Paddle" type="CharacterBody2D" unique_id=1383763916]
 script = ExtResource("1_y7wee")

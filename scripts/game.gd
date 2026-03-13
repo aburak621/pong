@@ -54,15 +54,13 @@ func _unhandled_input(event: InputEvent) -> void:
 			stop_game()
 
 
-func start_game(two_player: bool = false) -> void:
+func start_game(with_cpu: bool) -> void:
 	main_menu.hide_menu()
 	level.visible = true
 	level.process_mode = Node.PROCESS_MODE_INHERIT
 
-	if not two_player:
-		reset_game()
-	else:
-		reset_game()
+	$Level/Paddle2.is_cpu = with_cpu
+	reset_game()
 
 
 func stop_game() -> void:
