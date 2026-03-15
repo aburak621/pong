@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dfn5kmnmubtlx"]
 
 [ext_resource type="Script" uid="uid://dfknqwxne6yrc" path="res://scripts/ball.gd" id="1_cxlvu"]
-[ext_resource type="Texture2D" uid="uid://b2vc3wgdnnbsp" path="res://dot.png" id="2_f7cbr"]
+[ext_resource type="Texture2D" uid="uid://b2vc3wgdnnbsp" path="res://sprites/dot.png" id="2_f7cbr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxlvu"]
 size = Vector2(16, 16)

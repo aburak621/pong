@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bi08mwvmdg0ff"]
 
 [ext_resource type="Script" uid="uid://boh04jopq1q4d" path="res://scripts/main_menu.gd" id="1_ekxnf"]
-[ext_resource type="Theme" uid="uid://cit1d7tabj67q" path="res://pong_theme.tres" id="1_l6cm7"]
+[ext_resource type="Theme" uid="uid://cit1d7tabj67q" path="res://resources/pong_theme.tres" id="1_l6cm7"]
 
 [node name="MainMenu" type="Control" unique_id=1956709996]
 layout_mode = 3
