@@ -50,7 +50,8 @@ func play_sound(paddle_hit: bool) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("quit"):
 		if main_menu.visible:
-			get_tree().quit()
+			if OS.has_feature("editor"):
+				get_tree().quit()
 		else:
 			stop_game()
 
@@ -61,6 +62,8 @@ func start_game(with_cpu: bool) -> void:
 	level.process_mode = Node.PROCESS_MODE_INHERIT
 
 	$Level/Paddle2.is_cpu = with_cpu
+	%ScoreLabel1.reset_score()
+	%ScoreLabel2.reset_score()
 	reset_game()
 
 
